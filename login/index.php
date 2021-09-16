@@ -1,8 +1,13 @@
 <?php
   session_start();
-  echo $_SESSION['S_IDUSUARIO'];
+  //echo $_SESSION['S_IDUSUARIO'];
   if(isset($_SESSION['S_IDUSUARIO'])){
+	  
     header('Location: ../vista/index.php');
+  }
+  else{
+	  //echo "La sesion no se creó PELOTUDAZO";
+	  echo $_SESSION['S_IDUSUARIO'];
   }
 ?>
 

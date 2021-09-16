@@ -17,16 +17,19 @@ function VerificarUsuario(){
             Swal.fire("Mensaje De Error",'Usuario y/o contrase\u00f1a incorrecta',"error");
         }else{
             var data = JSON.parse(resp);
+
             if (data[0][8]==='I'){
                 return Swal.fire("Mensaje de Advertencia","El usuario: "+usu+" no tiene sesión abierta","warning");
+                //return Swal.fire("Mensaje de Advertencia","El usuario: "+data[0][6]+" no tiene sesión abierta","warning");
             }
+            
             $.ajax({
                 url:'../controlador/usuario/controlador_crear_sesion.php',
                 type:'POST',
                 data:{
-                    idusuaio:data[0][0],
-                    user:data[0][1],
-                    rol:data[0][5]
+                    idusuario:data[0][0],
+                    user:data[0][5],
+                    rol:data[0][7]
                 }
             //Swal.fire("Mensaje De Confirmacion",'Bienvenido al sistema',"success");
             }).done(function(resp){
@@ -51,6 +54,7 @@ function VerificarUsuario(){
                 /* Read more about handling dismissals below */
                 if (result.dismiss === Swal.DismissReason.timer) {
                    location.reload();
+                   //header('Location: ../vista/index.php');
                 }
                 })
 

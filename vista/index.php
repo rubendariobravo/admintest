@@ -1,5 +1,11 @@
-
-
+<?php
+  session_start();
+  //echo $_SESSION['S_IDUSUARIO'];
+  if(!isset($_SESSION['S_IDUSUARIO'])){
+	  header('Location: ../login/index.php');
+  }
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -190,7 +196,7 @@
           <img src="../plantilla/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php $_SESSION['S_USER']; ?></a>
+          <a href="#" class="d-block"><?php echo $_SESSION['S_USER']; ?></a>
         </div>
       </div>
 

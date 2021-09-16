@@ -6,7 +6,7 @@
 		private $basedatos;
 		public $conexion;
 		public function __construct(){
-		    $this->servidor = "210.210.210.5";
+		    $this->servidor = "localhost";
 			$this->usuario = "ruben";
 			$this->contrasena = "hormigota";
 			$this->basedatos = "dtpress";
