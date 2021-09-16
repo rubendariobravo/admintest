@@ -2,5 +2,5 @@
 session_start();
 session_destroy();
 header('Location: ../../login/index.php');
-//comentario 
+//comentario nuevamente hecho
 ?>
