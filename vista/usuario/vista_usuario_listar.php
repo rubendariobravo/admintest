@@ -496,7 +496,7 @@
   </div>
   <!-- /.card -->
 </div>
-<script src="">
+<script>
   $(document).ready(function() {
     $('#example').DataTable();
   });

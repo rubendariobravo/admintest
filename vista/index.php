@@ -230,7 +230,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a onclick="cargar_contenido('contenido_principal','usuario/vista_nuevo.php')" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Widgets

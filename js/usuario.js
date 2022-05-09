@@ -62,3 +62,43 @@ function VerificarUsuario(){
         }
     })
 }
+
+
+function listar_usuario(){
+   var table = $("#tabla_usuario").DataTable({
+       "ordering":false,
+       "paging": false,
+       "searching": { "regex": true },
+       "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ],
+       "pageLength": 100,
+       "destroy":true,
+       "async": false ,
+       "processing": true,
+       "ajax":{
+           "url":"../controlador/usuario/controlador_usuario_listar.php",
+           type:'POST'
+       },
+       "columns":[
+           {"data":"posicion"},
+           {"data":"persona"},
+           {"data":"usu_user"},
+           {"data":"usu_tipo"},
+           {"data":"usu_sexo"},
+           {"data":"usu_estatus",
+           render: function (data, type, row ) {
+               if(data=='ACTIVO'){
+                   return "<span class='label label-success'>"+data+"</span>";                   
+               }else{
+                 return "<span class='label label-danger'>"+data+"</span>";                 
+               }
+             }
+           },  
+           {"defaultContent":"<button style='font-size:13px;' type='button' class='editar btn btn-primary'>"}
+       ],
+
+       "language":idioma_espanol,
+       select: true
+   });
+
+}
+
