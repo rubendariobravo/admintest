@@ -80,13 +80,14 @@ function listar_usuario(){
        },
        "columns":[
            {"data":"posicion"},
-           {"data":"persona"},
-           {"data":"usu_user"},
-           {"data":"usu_tipo"},
-           {"data":"usu_sexo"},
-           {"data":"usu_estatus",
+           {"data":"id_usuario"},
+           {"data":"apellido"},
+           {"data":"nombre"},
+           {"data":"domicilio"},
+           {"data":"usuario"},
+           {"data":"estado",
            render: function (data, type, row ) {
-               if(data=='ACTIVO'){
+               if(data=='A'){
                    return "<span class='label label-success'>"+data+"</span>";                   
                }else{
                  return "<span class='label label-danger'>"+data+"</span>";                 
