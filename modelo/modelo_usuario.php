@@ -34,6 +34,7 @@
             }
             return $arreglo;
             $this->conexion->cerrar();
+            /*Cometario para ver si sube*/
         }
     }
 
